@@ -1,3 +1,1 @@
 # Pr_test
-
-Lamo
