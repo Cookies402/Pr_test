@@ -11,11 +11,11 @@
     
 <div class="container">
     <div class="form-box">
-        <h1>Sign up</h1>
+        <h1 id="title">Sign up</h1>
         <form>
             <div class="input-group">
-                
-                <div class="input-field">
+
+                <div class="input-field" id="nameField">
                     <i class="fa-solid fa-user"></i>
                     <input type="text" placeholder="Name">
                 </div>
@@ -30,10 +30,39 @@
                     <input type="password" placeholder="Password">
                 </div>
 
+                <p>Did you forget your password. <a href="#">Click here</a></p>
+
+            </div>
+            <div class="btn-field">
+                <button type="button" id="signupBTN">Sign up</button>
+                <button type="button" id="signinBTN" class="disable">Sign in</button>
             </div>
         </form>
     </div>
 </div>
+
+<script>
+
+let signupBTN = document.getElementById("signupBTN");
+let signinBTN = document.getElementById("signinBTN");
+let nameField = document.getElementById("nameField");
+let title = document.getElementById("title");
+
+signinBTN.onclick = function(){
+    nameField.style.maxHeight = "0";
+    title.innerHTML = "Sign In";
+    signupBTN.classList.add("disable");
+    signinBTN.classList.remove("disable");
+}
+
+signupBTN.onclick = function(){
+    nameField.style.maxHeight = "60px";
+    title.innerHTML = "Sign Up";
+    signupBTN.classList.remove("disable");
+    signinBTN.classList.add("disable");
+}
+
+</script>
 
 </body>
 </html>
